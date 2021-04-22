@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connect OneDrive Through API</title>
+
+
+</head>
+<body>
+	<button onClick="TestAuthenOneDrive()">Authen Through API</button>
+
+
+
+</body>
+
+<script type="text/javascript">
+
+	function TestAuthenOneDrive(){
+		var ClientApplication = "8473aee7-b1fb-43ca-9078-adcf63935061";
+		var scope = "onedrive.readwrite";
+		var responseType = "token";
+		var redirectUri = "https://searchfileapplication.web.app/ConnectOneDrive.html";
+
+		const userAction = async () => {
+		  	const response = await fetch('https://login.live.com/oauth20_authorize.srf?client_id='+ ClientApplication + '&scope=' + scope + '&response_type=' + responseType + '&redirect_uri=' + redirectUri);
+		  	const myJson = await response.json(); //extract JSON from the http response
+		  	// do something with myJson
+		}
+	}
+	
+
+</script>
+
+
+</html>
+
